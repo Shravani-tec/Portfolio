@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio of Shravani Khaire">
+    <title>Shravani Khaire - Portfolio</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f2f4f7;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 150px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        #hero h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        #hero .btn-primary {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+        #hero .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        /* About Section */
+        #about {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #ecf0f1;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #projects h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .project-cards {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background-color: white;
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .project-card h3 {
+            font-size: 1.6rem;
+            padding: 20px;
+            font-weight: 500;
+        }
+
+        .project-card p {
+            padding: 0 20px 20px;
+            font-size: 1rem;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .project-card .btn-secondary {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 50px;
+            margin: 20px 0;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card .btn-secondary:hover {
+            background-color: #2980b9;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 80px 20px;
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: white;
+        }
+
+        form button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #2980b9;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #3498db;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #2980b9;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <h1>Shravani Khaire</h1>
+                <p>AI Expert | Web Designer | Machine Learning</p>
+                </div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Welcome to My Portfolio</h2>
+                <p>I'm a passionate AI Expert specializing in AL Tools and Advanced Excel.</p>
+                <a href="#projects" class="btn-primary">View My Work</a>
+            </div>
+        </section>
+    
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    Hello! I'm Shravani Khaire, a creative and detail-oriented web designer with a love for crafting modern websites and applications. With a strong background in HTML , CSS, JavaScript , Python and a variety of frameworks, I thrive in building user-centric, responsive designs.
+                </p>
+            </div>
+        </section>
+    
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="project-cards">
+                    <div class="project-card">
+                        <img src="project1.jpg" alt="Project 1">
+                        <h3>Project Title</h3>
+                        <p>Project on AI Tools.</p>
+                        <a href="#" class="btn-secondary">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="project2.jpg" alt="Project 2">
+                        <h3>Project Title</h3>
+                        <p>Project on AI Robots.</p>
+                        <a href="#" class="btn-secondary">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="project3.jpg" alt="Project 3">
+                        <h3>Project Title</h3>
+                        <p>Project on Machines.</p>
+                        <a href="#" class="btn-secondary">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>We can team up for better creativity in future.</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/Shravani" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Shravani" target="_blank">GitHub</a>
+                    <a href="https://twitter.com/Shravani" target="_blank">Twitter</a>
+                </div>
+            </div>
+        </section>
+    </body>
+    </html>
